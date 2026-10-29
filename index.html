@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misr RP | سيرفر مصر للحياة الواقعية</title>
+    <title>سيرفر مصر للحياة الواقعية | Misr RP</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Cairo Font from Google Fonts -->
@@ -18,15 +18,15 @@
             theme: {
                 extend: {
                     colors: {
-                        bgDark: '#050E0A',
-                        cardDark: '#0C1C14',
-                        borderDark: '#193828',
-                        accentGreen: '#10B981',
-                        accentGlow: '#34D399',
+                        bgDark: '#0D0E12',
+                        cardDark: '#161920',
+                        borderDark: '#262D3D',
+                        accentRed: '#EF4444',
+                        accentGlow: '#F87171',
                         goldAccent: '#D97706',
                         goldGlow: '#F59E0B',
-                        policeBg: '#07111E',
-                        policeAccent: '#2563EB',
+                        policeBg: '#070D1E',
+                        policeAccent: '#3B82F6',
                         healthRed: '#E11D48'
                     },
                     fontFamily: {
@@ -40,39 +40,37 @@
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #050E0A;
+            background-color: #0D0E12;
             color: #FFFFFF;
             overflow-x: hidden;
         }
         
-        /* Glassmorphism Classes */
         .glass-panel {
-            background: rgba(12, 28, 20, 0.75);
+            background: rgba(22, 25, 32, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(25, 56, 40, 0.8);
+            border: 1px solid rgba(38, 45, 61, 0.8);
         }
         
         .glass-nav {
-            background: rgba(5, 14, 10, 0.88);
+            background: rgba(13, 14, 18, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(25, 56, 40, 0.6);
+            border-bottom: 1px solid rgba(38, 45, 61, 0.6);
         }
 
         .police-glass {
-            background: rgba(7, 17, 30, 0.85);
+            background: rgba(7, 13, 30, 0.85);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(37, 99, 235, 0.35);
+            border: 1px solid rgba(59, 130, 246, 0.35);
         }
         
-        /* Glow Effects */
         .glow-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glow-hover:hover {
-            border-color: #d33434;
-            box-shadow: 0 0 25px rgba(52, 211, 153, 0.2);
+            border-color: #EF4444;
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
             transform: translateY(-2px);
         }
 
@@ -83,60 +81,60 @@
         }
 
         .police-glow:hover {
-            border-color: #2563EB;
-            box-shadow: 0 0 25px rgba(37, 99, 235, 0.35);
+            border-color: #3B82F6;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
             transform: translateY(-2px);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #050E0A;
+            background: #0D0E12;
         }
         ::-webkit-scrollbar-thumb {
-            background: #193828;
+            background: #262D3D;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #b91010;
+            background: #EF4444;
         }
     </style>
 </head>
-<body class="selection:bg-accentGreen selection:text-white">
+<body class="selection:bg-accentRed selection:text-white">
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 left-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 glass-panel px-6 py-4 rounded-xl flex items-center gap-3 border-accentGlow border shadow-2xl">
-        <i id="toastIcon" class="fa-solid fa-circle-check text-accentGlow text-xl"></i>
-        <span id="toastMsg" class="font-medium text-sm text-gray-200">السيرفر تحت الإنشاء تابع الديسكورد! </span>
+    <div id="toast" class="fixed bottom-6 left-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 glass-panel px-6 py-4 rounded-xl flex items-center gap-3 border-accentRed border shadow-2xl">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-accentRed text-xl"></i>
+        <span id="toastMsg" class="font-medium text-sm text-gray-200">تم النسخ بنجاح!</span>
     </div>
 
     <!-- Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Server Emblem / Logo Hero Box -->
-                <div class="w-28 h-28 mx-auto mb-6 relative flex items-center justify-center rounded-3xl bg-cardDark border-2 border-accentRed/50 shadow-2xl shadow-red-950/60 overflow-hidden">
-                    <div class="absolute inset-0 bg-accentRed/20 blur-xl rounded-full"></div>
-                    <img src="logo.png" alt="شعار مصر الكبير" class="w-full h-full object-cover relative z-10">
-                </div>
+                
+                <!-- Logo & Server Name (يقرأ اللوجو المحلي logo.png من نفس المجلد) -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('main')">
+                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-accentRed bg-black flex items-center justify-center shadow-lg shadow-red-950/50">
+                        <img src="logo.png" alt="شعار سيرفر مصر" class="w-full h-full object-contain">
+                    </div>
                     <div>
-                        <span class="font-black text-xl tracking-wide text-white block leading-none">مصر <span class="text-goldGlow">RP</span></span>
+                        <span class="font-black text-xl tracking-wide text-white block leading-none">مصر <span class="text-accentRed">RP</span></span>
                         <div class="flex items-center gap-2 mt-1">
-                            <span class="w-2 h-2 rounded-full bg-accentGlow animate-pulse"></span>
-                            <span class="text-xs text-emerald-400 font-semibold">متصل: </span>
+                            <span class="w-2 h-2 rounded-full bg-accentRed animate-pulse"></span>
+                            <span class="text-xs text-red-400 font-semibold">متصل: 185 / 200 لاعب</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-300">
-                    <button onclick="switchView('main')" class="hover:text-accentGlow transition-colors py-1">الرئيسية</button>
-                    <a href="#rules" onclick="switchView('main')" class="hover:text-accentGlow transition-colors py-1">القوانين</a>
-                    <a href="#sectors" onclick="switchView('main')" class="hover:text-accentGlow transition-colors py-1">القطاعات</a>
-                    <a href="#news" onclick="switchView('main')" class="hover:text-accentGlow transition-colors py-1">الأخبار</a>
-                    <a href="#reqs" onclick="switchView('main')" class="hover:text-accentGlow transition-colors py-1">المتطلبات</a>
+                    <button onclick="switchView('main')" class="hover:text-accentRed transition-colors py-1">الرئيسية</button>
+                    <a href="#rules" onclick="switchView('main')" class="hover:text-accentRed transition-colors py-1">القوانين</a>
+                    <a href="#sectors" onclick="switchView('main')" class="hover:text-accentRed transition-colors py-1">القطاعات</a>
+                    <a href="#news" onclick="switchView('main')" class="hover:text-accentRed transition-colors py-1">الأخبار</a>
+                    <a href="#reqs" onclick="switchView('main')" class="hover:text-accentRed transition-colors py-1">المتطلبات</a>
                     <button onclick="switchView('police')" class="px-3.5 py-1.5 rounded-lg bg-policeAccent/20 text-blue-400 border border-policeAccent/40 hover:bg-policeAccent hover:text-white transition-all duration-300 flex items-center gap-2">
                         <i class="fa-solid fa-shield-halved"></i>
                         قطاع الشرطة
@@ -145,14 +143,14 @@
 
                 <!-- CTA & Fast IP Copy -->
                 <div class="hidden sm:flex items-center gap-4">
-                    <button onclick="copyIP('play.meyras.net')" class="px-4 py-2.5 rounded-xl glass-panel text-xs font-bold text-gray-300 hover:text-white hover:border-goldGlow transition-all duration-300 flex items-center gap-2">
-                        <i class="fa-regular fa-copy text-goldGlow"></i>
-                        <span dir="ltr">play.meyras.net</span>
+                    <button onclick="copyIP('play.misrrp.com')" class="px-4 py-2.5 rounded-xl glass-panel text-xs font-bold text-gray-300 hover:text-white hover:border-accentRed transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-regular fa-copy text-accentRed"></i>
+                        <span dir="ltr">play.misrrp.com</span>
                     </button>
-                    <button onclick="openApplyModal('المواطنون العامة')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-accentGreen to-emerald-600 hover:from-emerald-500 hover:to-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-900/40 transition-all duration-300 flex items-center gap-2">
-                        <i class="fa-solid fa-id-card"></i>
-                        قدّم الآن
-                    </button>
+                    <a href="https://discord.gg/yourserver" target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-accentRed to-rose-700 hover:from-rose-600 hover:to-rose-800 text-white font-bold text-sm shadow-lg shadow-red-950/40 transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-brands fa-discord"></i>
+                        ديسكورد السيرفر
+                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -169,20 +167,20 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobileMenu" class="hidden lg:hidden glass-panel border-t border-borderDark px-6 py-6 space-y-4">
-            <button onclick="switchView('main'); toggleMobileMenu();" class="block w-full text-right text-gray-200 font-semibold hover:text-accentGlow">الرئيسية</button>
-            <a href="#rules" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentGlow">القوانين</a>
-            <a href="#sectors" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentGlow">القطاعات</a>
-            <a href="#news" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentGlow">الأخبار</a>
-            <a href="#reqs" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentGlow">المتطلبات</a>
+            <button onclick="switchView('main'); toggleMobileMenu();" class="block w-full text-right text-gray-200 font-semibold hover:text-accentRed">الرئيسية</button>
+            <a href="#rules" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentRed">القوانين</a>
+            <a href="#sectors" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentRed">القطاعات</a>
+            <a href="#news" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentRed">الأخبار</a>
+            <a href="#reqs" onclick="switchView('main'); toggleMobileMenu();" class="block text-gray-200 font-semibold hover:text-accentRed">المتطلبات</a>
             <button onclick="switchView('police'); toggleMobileMenu();" class="block w-full text-right text-blue-400 font-bold">صفحة قطاع الشرطة والخدمات</button>
             <div class="pt-4 border-t border-borderDark flex flex-col gap-3">
-                <button onclick="copyIP('play.meyras.net')" class="w-full py-3 rounded-xl glass-panel text-xs font-bold text-gray-300 flex items-center justify-center gap-2">
-                    <i class="fa-regular fa-copy text-goldGlow"></i>
-                    <span dir="ltr">play.meyras.net</span>
+                <button onclick="copyIP('play.misrrp.com')" class="w-full py-3 rounded-xl glass-panel text-xs font-bold text-gray-300 flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-copy text-accentRed"></i>
+                    <span dir="ltr">play.misrrp.com</span>
                 </button>
-                <button onclick="openApplyModal('المواطنون العامة'); toggleMobileMenu();" class="w-full py-3 rounded-xl bg-accentGreen text-white font-bold text-center">
-                    قدّم الآن للسيرفر
-                </button>
+                <a href="https://discord.gg/yourserver" target="_blank" class="w-full py-3 rounded-xl bg-accentRed text-white font-bold text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-discord"></i> ديسكورد السيرفر
+                </a>
             </div>
         </div>
     </nav>
@@ -192,71 +190,64 @@
         
         <!-- Hero Section -->
         <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
-            <!-- Glow Background Effects -->
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-accentGreen/15 blur-[140px] rounded-full pointer-events-none"></div>
-            <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-goldGlow/10 blur-[120px] rounded-full pointer-events-none"></div>
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-accentRed/15 blur-[140px] rounded-full pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 
-                <!-- Server Meyras Logo Emblem Hero -->
-                <div class="w-28 h-28 mx-auto mb-6 relative flex items-center justify-center">
-                    <div class="absolute inset-0 bg-goldGlow/20 blur-xl rounded-full"></div>
-                    <svg class="w-full h-full text-goldGlow drop-shadow-[0_0_15px_rgba(245,158,11,0.5)] relative z-10" viewBox="0 0 100 100" fill="currentColor">
-                        <path d="M50 5 L61 24 L82 17 L80 39 L99 50 L80 61 L82 83 L61 76 L50 95 L39 76 L18 83 L20 61 L1 50 L20 39 L18 17 L39 24 Z" fill="none" stroke="currentColor" stroke-width="3"/>
-                        <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,3"/>
-                        <path d="M50 35 C48 30 40 30 38 33 C45 35 48 38 49 43 L49 55 C44 52 38 51 32 53 C38 55 45 57 48 60 L48 68 L52 68 L52 60 C55 57 62 55 68 53 C62 51 56 52 51 55 L51 43 C52 38 55 35 62 33 C60 30 52 30 50 35 Z"/>
-                        <path d="M35 65 Q50 78 65 65 Q50 72 35 65 Z"/>
-                    </svg>
+                <!-- Hero Logo Box (يقرأ logo.png المحلي أيضاً بكبر الواجهة) -->
+                <div class="w-28 h-28 mx-auto mb-6 relative flex items-center justify-center rounded-3xl bg-cardDark border-2 border-accentRed/50 shadow-2xl shadow-red-950/60 overflow-hidden">
+                    <div class="absolute inset-0 bg-accentRed/20 blur-xl rounded-full"></div>
+                    <img src="logo.png" alt="شعار مصر" class="w-full h-full object-contain p-2 relative z-10">
                 </div>
 
                 <!-- Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs font-bold text-goldGlow border-goldGlow/30 mb-6">
-                    <i class="fa-solid fa-crown text-amber-400"></i>
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-xs font-bold text-accentRed border-accentRed/30 mb-6">
+                    <i class="fa-solid fa-crown text-red-400"></i>
                     <span>سيرفر مصر للحياة الواقعية | إصدار 1.7.10</span>
                 </div>
 
                 <!-- Main Title -->
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight mb-6">
-                    تجربة الحياة الواقعية الفريدة <br>
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-accentGlow via-emerald-400 to-goldGlow">
+                    تجربة الحياة الواقعية المصرية <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-accentRed via-rose-400 to-goldGlow">
                         في سيرفر مصر RP
                     </span>
                 </h1>
 
                 <!-- Subtitle -->
                 <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-300 font-normal leading-relaxed mb-10">
-                    انضم إلى مجتمع محاكي الحياة الواقعية الأضخم على إصدار 1.20.1. قطاعات حكومية متكاملة، اقتصاد واقعي، أنظمة مرور وأحوال مدنية، وبنية تكتيكية متطورة.
+                    انضم إلى مجتمع الرول بلاي المصري الأضخم على إصدار 1.7.10. قطاعات حكومية متكاملة، اقتصاد واقعي، وأنظمة مرور وأحوال مدنية تكتيكية.
                 </p>
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                    <button onclick="openApplyModal('المواطنون العامة')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accentGreen to-emerald-600 hover:from-emerald-500 hover:to-emerald-700 text-white font-extrabold text-base shadow-xl shadow-emerald-950/60 transition-all duration-300 flex items-center justify-center gap-3">
+                    <button onclick="openApplyModal('المواطنون العامة')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accentRed to-rose-700 hover:from-rose-600 hover:to-rose-800 text-white font-extrabold text-base shadow-xl shadow-red-950/60 transition-all duration-300 flex items-center justify-center gap-3">
                         <i class="fa-solid fa-passport text-lg"></i>
                         قدّم على الهوية الوطنية
                     </button>
-                    <a href="#sectors" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-base hover:border-goldGlow transition-all duration-300 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-building text-goldGlow"></i>
+                    <a href="#sectors" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-base hover:border-accentRed transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-building text-accentRed"></i>
                         استكشف القطاعات
                     </a>
                 </div>
 
                 <!-- Quick Server Info Grid -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-16">
-                    <div class="glass-panel p-5 rounded-2xl text-center gold-glow-hover">
-                        <div class="text-2xl font-black text-goldGlow mb-1">1.20.1</div>
+                    <div class="glass-panel p-5 rounded-2xl text-center glow-hover">
+                        <div class="text-2xl font-black text-accentRed mb-1">1.7.10</div>
                         <div class="text-xs text-gray-400 font-semibold">إصدار اللعبة</div>
                     </div>
                     <div class="glass-panel p-5 rounded-2xl text-center glow-hover">
-                        <div class="text-2xl font-black text-accentGlow mb-1">حياة واقعية</div>
+                        <div class="text-2xl font-black text-accentRed mb-1">حياة واقعية</div>
                         <div class="text-xs text-gray-400 font-semibold">أسلوب اللعب (Realistic RP)</div>
                     </div>
                     <div class="glass-panel p-5 rounded-2xl text-center glow-hover">
                         <div class="text-2xl font-black text-blue-400 mb-1">5 خدمات</div>
                         <div class="text-xs text-gray-400 font-semibold">قطاع الشرطة المتكامل</div>
                     </div>
-                    <div class="glass-panel p-5 rounded-2xl text-center gold-glow-hover">
+                    <div class="glass-panel p-5 rounded-2xl text-center glow-hover">
                         <div class="text-2xl font-black text-emerald-400 mb-1">24/7</div>
-                        <div class="text-xs text-gray-400 font-semibold">استضافة بتوقيتات بشكل مؤقت </div>
+                        <div class="text-xs text-gray-400 font-semibold">استضافة بدون توقف</div>
                     </div>
                 </div>
             </div>
@@ -265,20 +256,17 @@
         <!-- Rules Section -->
         <section id="rules" class="py-20 relative">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
                 <div class="text-center mb-14">
-                    <h2 class="text-xs font-extrabold text-goldGlow tracking-widest uppercase mb-2">أنظمة مدينة مصر</h2>
+                    <h2 class="text-xs font-extrabold text-accentRed tracking-widest uppercase mb-2">أنظمة مدينة مصر</h2>
                     <h3 class="text-3xl sm:text-4xl font-black text-white">القوانين واللوائح العامة</h3>
                     <p class="text-gray-400 text-sm mt-3">احترام اللوائح والقوانين أساس نجاح تجربة الحياة الواقعية واستقرار المجتمع.</p>
                 </div>
 
-                <!-- Accordion List -->
                 <div class="space-y-4">
-                    <!-- Rule 1 -->
                     <div class="glass-panel rounded-2xl overflow-hidden glow-hover">
                         <button onclick="toggleAccordion('rule1')" class="w-full p-6 text-right flex items-center justify-between font-bold text-lg text-white">
                             <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-gavel text-accentGlow"></i>
+                                <i class="fa-solid fa-gavel text-accentRed"></i>
                                 قوانين تقمص الشخصية (In Character & Roleplay)
                             </span>
                             <i id="rule1-icon" class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
@@ -287,12 +275,11 @@
                             <ul class="list-disc list-inside space-y-2">
                                 <li>التصرف الدائم بأسلوب حياة واقعية منطقي ومطابق للواقع (Realistic RP).</li>
                                 <li>يُمنع الخروج أو إغلاق اللعبة أثناء المواجهات أو الاستيقاف الأمني (Combat Logging).</li>
-                                <li>احترام قوانين المرور والسرعات المحددة داخل أحياء مدينة مصر.</li>
+                                <li>احترام قوانين المرور والسرعات المحددة داخل شوارع وأحياء مدينة مصر.</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Rule 2 -->
                     <div class="glass-panel rounded-2xl overflow-hidden glow-hover">
                         <button onclick="toggleAccordion('rule2')" class="w-full p-6 text-right flex items-center justify-between font-bold text-lg text-white">
                             <span class="flex items-center gap-3">
@@ -308,23 +295,6 @@
                             </ul>
                         </div>
                     </div>
-
-                    <!-- Rule 3 -->
-                    <div class="glass-panel rounded-2xl overflow-hidden glow-hover">
-                        <button onclick="toggleAccordion('rule3')" class="w-full p-6 text-right flex items-center justify-between font-bold text-lg text-white">
-                            <span class="flex items-center gap-3">
-                                <i class="fa-solid fa-shield-cat text-goldGlow"></i>
-                                قوانين القوات المسلحة والأمن العام
-                            </span>
-                            <i id="rule3-icon" class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
-                        </button>
-                        <div id="rule3" class="hidden px-6 pb-6 text-gray-300 text-sm leading-relaxed border-t border-borderDark/50 pt-4">
-                            <ul class="list-disc list-inside space-y-2">
-                                <li>الامتثال التام لإرشادات وتوجيهات أمن الطرق والأمن العام في النقاط التفتيشية.</li>
-                                <li>يمنع دخول المناطق العسكرية الحساسة التابعة للقوات المسلحة دون تصريح رسمي.</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -333,14 +303,14 @@
         <section id="sectors" class="py-20 relative bg-black/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-14">
-                    <h2 class="text-xs font-extrabold text-goldGlow tracking-widest uppercase mb-2">مؤسسات المدينة</h2>
+                    <h2 class="text-xs font-extrabold text-accentRed tracking-widest uppercase mb-2">مؤسسات الدولة</h2>
                     <h3 class="text-3xl sm:text-4xl font-black text-white">قطاعات سيرفر مصر</h3>
                     <p class="text-gray-400 text-sm mt-3">انضم إلى إحدى المؤسسات الكبرى وشارك في بناء واقع السيرفر.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <!-- 1. Police Sector (Special Featured Card) -->
+                    <!-- 1. Police Sector -->
                     <div class="police-glass rounded-2xl p-6 relative overflow-hidden police-glow flex flex-col justify-between">
                         <div class="absolute top-0 left-0 w-2 h-full bg-policeAccent"></div>
                         <div>
@@ -359,7 +329,7 @@
                         </button>
                     </div>
 
-                    <!-- 2. Health Sector (Crimson / Pink Red Color) -->
+                    <!-- 2. Health Sector -->
                     <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between border-red-900/40">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -376,25 +346,25 @@
                         </button>
                     </div>
 
-                    <!-- 3. Municipality Sector (New) -->
+                    <!-- 3. Municipality Sector -->
                     <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-teal-400 text-2xl">
+                                <div class="w-12 h-12 rounded-xl bg-accentRed/20 flex items-center justify-center text-accentRed text-2xl">
                                     <i class="fa-solid fa-city"></i>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-bold border border-teal-500/30">التطوير والخدمات</span>
+                                <span class="px-3 py-1 rounded-full bg-red-500/10 text-accentRed text-xs font-bold border border-red-500/30">التطوير والخدمات</span>
                             </div>
                             <h4 class="text-xl font-bold text-white mb-2">قطاع البلدية والشؤون الخدمية</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">إصدار تراخيص المباني، تنظيم الأسواق، صيانة البنية التحتية، ونظافة المدينة.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">إصدار تراخيص المباني، تنظيم الأسواق، صيانة البنية التحتية، ونظافة الشوارع.</p>
                         </div>
-                        <button onclick="openApplyModal('قطاع البلدية')" class="w-full py-3 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-sm border-borderDark hover:border-teal-500 transition-all duration-300">
+                        <button onclick="openApplyModal('قطاع البلدية')" class="w-full py-3 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-sm border-borderDark hover:border-accentRed transition-all duration-300">
                             تقديم طلب انضمام
                         </button>
                     </div>
 
-                    <!-- 4. Armed Forces Sector (New) -->
-                    <div class="glass-panel rounded-2xl p-6 gold-glow-hover flex flex-col justify-between border-amber-900/40">
+                    <!-- 4. Armed Forces Sector -->
+                    <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-goldAccent/20 flex items-center justify-center text-goldGlow text-2xl">
@@ -403,7 +373,7 @@
                                 <span class="px-3 py-1 rounded-full bg-amber-500/10 text-goldGlow text-xs font-bold border border-amber-500/30">الدفاع العسكري</span>
                             </div>
                             <h4 class="text-xl font-bold text-white mb-2">قطاع القوات المسلحة</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">حماية حدود المدينة، إدارة العمليات العسكرية الكبرى، وتأمين المنشآت السيادية.</p>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">حماية حدود الدولة، إدارة العمليات العسكرية الاستراتيجية، وتأمين المنشآت السيادية.</p>
                         </div>
                         <button onclick="openApplyModal('القوات المسلحة')" class="w-full py-3 rounded-xl glass-panel text-goldGlow hover:text-white font-bold text-sm border-borderDark hover:border-goldGlow transition-all duration-300">
                             تقديم طلب التجنيد
@@ -414,15 +384,15 @@
                     <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-accentGlow text-2xl">
+                                <div class="w-12 h-12 rounded-xl bg-accentRed/20 flex items-center justify-center text-accentRed text-2xl">
                                     <i class="fa-solid fa-briefcase"></i>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-accentGlow text-xs font-bold border border-emerald-500/30">القطاع التجاري</span>
+                                <span class="px-3 py-1 rounded-full bg-red-500/10 text-accentRed text-xs font-bold border border-red-500/30">القطاع التجاري</span>
                             </div>
                             <h4 class="text-xl font-bold text-white mb-2">التجارة والشركات الخاصة</h4>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6">إنشاء وتطوير المحلات التجارية، المطاعم، وخدمات النقل والخدمات الحرة.</p>
                         </div>
-                        <button onclick="openApplyModal('سجل تجاري')" class="w-full py-3 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-sm border-borderDark hover:border-accentGreen transition-all duration-300">
+                        <button onclick="openApplyModal('سجل تجاري')" class="w-full py-3 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-sm border-borderDark hover:border-accentRed transition-all duration-300">
                             فتح سجل تجاري
                         </button>
                     </div>
@@ -439,7 +409,7 @@
                             <h4 class="text-xl font-bold text-white mb-2">قطاع ورش الصيانة</h4>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6">إصلاح مركبات المواطنين والقطاعات الحكومية، وسحب السيارات المعطلة.</p>
                         </div>
-                        <button onclick="openApplyModal('ورشه صيانة')" class="w-full py-3 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-sm border-borderDark hover:border-orange-500 transition-all duration-300">
+                        <button onclick="openApplyModal('ورشة صيانة')" class="w-full py-3 rounded-xl glass-panel text-gray-200 hover:text-white font-bold text-sm border-borderDark hover:border-orange-500 transition-all duration-300">
                             تقديم طلب انضمام
                         </button>
                     </div>
@@ -448,47 +418,69 @@
             </div>
         </section>
 
-        <!-- News & Updates Section -->
+        <!-- News & Updates Section (تدعم صور محلية من نفس المجلد مثل news1.png) -->
         <section id="news" class="py-20 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-14">
-                    <h2 class="text-xs font-extrabold text-accentGlow tracking-widest uppercase mb-2">تحديثات مصر</h2>
+                    <h2 class="text-xs font-extrabold text-accentRed tracking-widest uppercase mb-2">تحديثات مصر</h2>
                     <h3 class="text-3xl sm:text-4xl font-black text-white">آخر المستجدات والإصدارات</h3>
+                    <p class="text-gray-400 text-sm mt-2">يمكنك وضع صور الأخبار مباشرة في المجلد واستدعائها مثل news1.png</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between">
+                    
+                    <!-- خبر 1 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden glow-hover flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
-                                <span>أكتوبر 2026</span>
-                                <span class="px-2.5 py-1 rounded-md bg-accentGreen/20 text-accentGlow font-bold">1.7.10</span>
+                            <!-- [مكان إضافة صورة الخبر محلياً]: ضع صورة باسم news1.png في نفس المجلد -->
+                            <div class="h-48 w-full bg-cardDark overflow-hidden border-b border-borderDark relative">
+                                <img src="news1.png" alt="صورة الخبر" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60';">
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-2">إطلاق نظام الخدمات الشرطية الخمسة</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">تدشين أقسام المرور والأحوال المدنية وأمن الطرق رسمياً في مقر الأمن العام.</p>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                                    <span>أكتوبر 2026</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-accentRed/20 text-accentRed font-bold">1.7.10</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mb-2">إطلاق نظام الخدمات الشرطية الخمسة</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">تدشين أقسام المرور والأحوال المدنية وأمن الطرق رسمياً في مديرية الأمن.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between">
+                    <!-- خبر 2 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden glow-hover flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
-                                <span>سارٍ الآن</span>
-                                <span class="px-2.5 py-1 rounded-md bg-goldAccent/20 text-goldGlow font-bold">تحديث المودات</span>
+                            <div class="h-48 w-full bg-cardDark overflow-hidden border-b border-borderDark relative">
+                                <img src="news2.png" alt="صورة الخبر" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=60';">
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-2">تحديث مود الحياة الواقعية المتقدم</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">إضافة مركبات جديدة، وبنية صوتية ثلاثية الأبعاد متوافقة مع إصدار 1.20.1.</p>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                                    <span>سارٍ الآن</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-goldAccent/20 text-goldGlow font-bold">تحديث المودات</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mb-2">تحديث مود الحياة الواقعية المتقدم</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">إضافة مركبات جديدة، وبنية صوتية ثلاثية الأبعاد متوافقة مع إصدار 1.7.10.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-2xl p-6 glow-hover flex flex-col justify-between">
+                    <!-- خبر 3 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden glow-hover flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between text-xs text-gray-400 mb-4">
-                                <span>جديد</span>
-                                <span class="px-2.5 py-1 rounded-md bg-teal-500/20 text-teal-300 font-bold">قطاع البلدية</span>
+                            <div class="h-48 w-full bg-cardDark overflow-hidden border-b border-borderDark relative">
+                                <img src="news3.png" alt="صورة الخبر" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60';">
                             </div>
-                            <h4 class="text-lg font-bold text-white mb-2">افتتاح مقر وزارة البلدية</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">إمكانية التقديم على تراخيص البناء والمحلات التجارية عبر مكاتب البلدية.</p>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                                    <span>جديد</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-accentRed/20 text-accentRed font-bold">قطاع البلدية</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-white mb-2">افتتاح مقر وزارة البلدية</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">إمكانية التقديم على تراخيص المبناء والمحلات التجارية عبر مكاتب البلدية.</p>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -496,37 +488,32 @@
         <!-- Requirements Section -->
         <section id="reqs" class="py-20 relative bg-black/40">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden border-accentGreen/30">
+                <div class="glass-panel rounded-3xl p-8 md:p-12 relative overflow-hidden border-accentRed/30">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                         <div>
                             <span class="text-xs font-extrabold text-goldGlow tracking-widest uppercase mb-2 block">دليل التثبيت</span>
-                            <h3 class="text-3xl font-black text-white mb-4">متطلبات التشغيل (1.20.10)</h3>
+                            <h3 class="text-3xl font-black text-white mb-4">متطلبات التشغيل (1.7.10)</h3>
                             <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                نستخدم إصدار ماينكرافت 1.20.1 المستقر مع حزمة مودات الحياة الواقعية الخاصة بسيرفر مصر لتوفير تجربة خالية من التقطيع.
+                                نستخدم إصدار ماينكرافت 1.7.10 المستقر مع حزمة مودات الحياة الواقعية الخاصة بسيرفر مصر لتوفير تجربة خالية من التقطيع.
                             </p>
                             
                             <div class="space-y-4 mb-8">
                                 <div class="flex items-center gap-3 text-sm text-gray-200">
-                                    <i class="fa-solid fa-square-check text-accentGlow"></i>
-                                    <span>المشغل: <strong class="text-white">Minecraft 1.20.1 Forge</strong></span>
+                                    <i class="fa-solid fa-square-check text-accentRed"></i>
+                                    <span>المشغل: <strong class="text-white">Minecraft 1.7.10 Forge</strong></span>
                                 </div>
                                 <div class="flex items-center gap-3 text-sm text-gray-200">
-                                    <i class="fa-solid fa-square-check text-accentGlow"></i>
+                                    <i class="fa-solid fa-square-check text-accentRed"></i>
                                     <span>نظام الصوت: <strong class="text-white">مود المحادثة الصوتية ثلاثي الأبعاد</strong></span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-gray-200">
-                                    <i class="fa-solid fa-square-check text-accentGlow"></i>
-                                    <span>نظام اللعب: <strong class="text-white">مودات الحياة الواقعية والمركبات</strong></span>
                                 </div>
                             </div>
 
-                            <button onclick="copyIP('https://meyras-rp.net/modpack-1.7.10.zip')" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-accentGreen to-emerald-600 hover:from-emerald-500 hover:to-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-950/50 transition-all duration-300 flex items-center gap-3">
+                            <button onclick="copyIP('https://misrrp.com/modpack-1.7.10.zip')" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-accentRed to-rose-700 hover:from-rose-600 hover:to-rose-800 text-white font-bold text-sm shadow-lg shadow-red-950/50 transition-all duration-300 flex items-center gap-3">
                                 <i class="fa-solid fa-download"></i>
-                                تحميل تجميعة مودات مصر (Modpack 1.20.1)
+                                تحميل تجميعة مودات مصر (Modpack 1.7.10)
                             </button>
                         </div>
 
-                        <!-- System Specs Card -->
                         <div class="glass-panel p-6 rounded-2xl border-borderDark bg-bgDark/80 space-y-4">
                             <h4 class="font-bold text-white text-base border-b border-borderDark pb-3 flex items-center gap-2">
                                 <i class="fa-solid fa-microchip text-goldGlow"></i>
@@ -534,15 +521,15 @@
                             </h4>
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-gray-400">المعالج:</span>
-                                <span class="font-semibold text-gray-200">Intel Core i3 / AMD Ryzen 3</span>
+                                <span class="semibold text-gray-200">Intel Core i3 / AMD Ryzen 3</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-gray-400">الرامات (RAM):</span>
-                                <span class="font-semibold text-gray-200">جهازك 8 جيجا رام او فوق</span>
+                                <span class="semibold text-gray-200">4 GB إلى 8 GB</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-gray-400">إصدار ماينكرافت:</span>
-                                <span class="font-semibold text-goldGlow font-bold">1.20.1 Forge</span>
+                                <span class="font-semibold text-goldGlow font-bold">1.7.10 Forge</span>
                             </div>
                         </div>
                     </div>
@@ -556,9 +543,7 @@
     <div id="policeView" class="hidden min-h-screen pt-32 pb-24 bg-policeBg text-white transition-opacity duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Police Hero Header -->
             <div class="police-glass p-8 md:p-12 rounded-3xl mb-12 relative overflow-hidden border-policeAccent/50">
-                <div class="absolute -top-10 -left-10 w-64 h-64 bg-policeAccent/20 blur-3xl rounded-full pointer-events-none"></div>
                 <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
                     <div class="flex items-center gap-6">
                         <div class="w-20 h-20 rounded-2xl bg-policeAccent/20 border border-policeAccent/50 flex items-center justify-center text-policeAccent text-4xl shadow-xl shadow-policeAccent/30">
@@ -585,7 +570,7 @@
                 </div>
             </div>
 
-            <!-- Police 5 Core Services Section (NEW) -->
+            <!-- Police 5 Core Services -->
             <div class="mb-16">
                 <div class="text-center mb-10">
                     <h2 class="text-xs font-extrabold text-blue-400 tracking-widest uppercase mb-2">خدمات المواطنين والأمن</h2>
@@ -593,98 +578,39 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <!-- 1. Civil Status -->
                     <div class="police-glass p-6 rounded-2xl border-blue-800/40 hover:border-blue-500 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4">
-                            <i class="fa-solid fa-address-card"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-address-card"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">1. الأحوال المدنية</h4>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">إصدار الهويات الوطنية للاعبين، تسجيل الأسماء الرسمية، وتحديث بيانات المواطنة في السيرفر.</p>
-                        <button onclick="openApplyModal('خدمة الأحوال المدنية')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2">
-                            <span>طلب إصدار هوية</span>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
+                        <button onclick="openApplyModal('خدمة الأحوال المدنية')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2"><span>طلب إصدار هوية</span><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
 
-                    <!-- 2. Traffic Department -->
                     <div class="police-glass p-6 rounded-2xl border-blue-800/40 hover:border-blue-500 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4">
-                            <i class="fa-solid fa-car"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-car"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">2. قطاع المرور</h4>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">استخراج رخص القيادة، استمارة المركبات، تسديد المخالفات المرورية، ونقل ملكيات السيارات.</p>
-                        <button onclick="openApplyModal('خدمة المرور ورخص القيادة')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2">
-                            <span>حجز موعد رخصة</span>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
+                        <button onclick="openApplyModal('خدمة المرور ورخص القيادة')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2"><span>حجز موعد رخصة</span><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
 
-                    <!-- 3. Reports & Calls -->
                     <div class="police-glass p-6 rounded-2xl border-blue-800/40 hover:border-blue-500 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4">
-                            <i class="fa-solid fa-phone-volume"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-phone-volume"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">3. مركز البلاغات (999)</h4>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">استقبال بلاغات السرقة، الحوادث، أو الاعتداءات وتوجيه أقرب دورية شرطة لموقع الحدث.</p>
-                        <button onclick="openApplyModal('تقديم بلاغ أمني')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2">
-                            <span>تقديم بلاغ أمني</span>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
+                        <button onclick="openApplyModal('تقديم بلاغ أمني')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2"><span>تقديم بلاغ أمني</span><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
 
-                    <!-- 4. Public Security -->
                     <div class="police-glass p-6 rounded-2xl border-blue-800/40 hover:border-blue-500 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-user-shield"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">4. الأمن العام</h4>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">تسيير الدوريات الأمنية داخل أحياء المدينة، الضبط الجنائي، ومكافحة سرقات الأحياء.</p>
-                        <button onclick="openApplyModal('الالتحاق بالأمن العام')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2">
-                            <span>طلب التقديم</span>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
+                        <button onclick="openApplyModal('الالتحاق بالأمن العام')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2"><span>طلب التقديم</span><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
 
-                    <!-- 5. Highway Patrol -->
                     <div class="police-glass p-6 rounded-2xl border-blue-800/40 hover:border-blue-500 transition-all lg:col-span-2">
-                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4">
-                            <i class="fa-solid fa-road"></i>
-                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-road"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">5. أمن الطرق</h4>
                         <p class="text-gray-400 text-sm leading-relaxed mb-4">تأمين الخطوط السريعة بين المدن، إدارة النقاط التفتيشية بين المناطق، وضبط المهربين والمتجاوزين.</p>
-                        <button onclick="openApplyModal('الالتحاق بأمن الطرق')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2">
-                            <span>طلب التقديم</span>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Police Ranks -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-black text-white text-center mb-8">سلسلة الرتب الشرطية</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="police-glass p-5 rounded-2xl text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-500/20 text-blue-400 font-black flex items-center justify-center">1</div>
-                        <h5 class="font-bold text-white">مدير الأمن العام</h5>
-                        <span class="text-xs text-blue-400">القيادة العليا</span>
-                    </div>
-                    <div class="police-glass p-5 rounded-2xl text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-500/20 text-blue-400 font-black flex items-center justify-center">2</div>
-                        <h5 class="font-bold text-white">قائد أمن الطرق / المرور</h5>
-                        <span class="text-xs text-blue-400">إدارة الأقسام</span>
-                    </div>
-                    <div class="police-glass p-5 rounded-2xl text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-500/20 text-blue-400 font-black flex items-center justify-center">3</div>
-                        <h5 class="font-bold text-white">رقيب أول دوريات</h5>
-                        <span class="text-xs text-gray-400">الميدان</span>
-                    </div>
-                    <div class="police-glass p-5 rounded-2xl text-center">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-500/20 text-blue-400 font-black flex items-center justify-center">4</div>
-                        <h5 class="font-bold text-white">جندي / كاديت</h5>
-                        <span class="text-xs text-gray-400">مستجد</span>
+                        <button onclick="openApplyModal('الالتحاق بأمن الطرق')" class="text-xs font-bold text-blue-400 hover:text-white flex items-center gap-2"><span>طلب التقديم</span><i class="fa-solid fa-arrow-left"></i></button>
                     </div>
                 </div>
             </div>
@@ -694,44 +620,44 @@
 
     <!-- APPLICATION MODAL -->
     <div id="applyModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-xl rounded-3xl p-6 sm:p-8 relative border-accentGlow/40 shadow-2xl">
+        <div class="glass-panel w-full max-w-xl rounded-3xl p-6 sm:p-8 relative border-accentRed/40 shadow-2xl">
             <button onclick="closeApplyModal()" class="absolute top-5 left-5 text-gray-400 hover:text-white text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="flex items-center gap-4 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-accentGreen/20 text-accentGlow flex items-center justify-center text-xl font-bold">
+                <div class="w-12 h-12 rounded-xl bg-accentRed/20 text-accentRed flex items-center justify-center text-xl font-bold">
                     <i class="fa-solid fa-file-pen"></i>
                 </div>
                 <div>
                     <h3 class="text-xl font-black text-white">نموذج التقديم - سيرفر مصر</h3>
-                    <p class="text-xs text-gray-400">القسم المختار: <span id="modalSectorName" class="text-goldGlow font-bold">عام</span></p>
+                    <p class="text-xs text-gray-400">القسم المختار: <span id="modalSectorName" class="text-accentRed font-bold">عام</span></p>
                 </div>
             </div>
 
             <form onsubmit="submitForm(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">اسمك في ماينكرافت (Username)</label>
-                    <input type="text" required placeholder="مثال: MeyrasPlayer" class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentGlow">
+                    <input type="text" required placeholder="مثال: MisrPlayer" class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentRed">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-300 mb-1">حساب الديسكورد (Discord Username)</label>
-                        <input type="text" required placeholder="User#0000" class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentGlow">
+                        <input type="text" required placeholder="User#0000" class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentRed">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-300 mb-1">العمر الحقيقي</label>
-                        <input type="number" required min="15" max="60" placeholder="18" class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentGlow">
+                        <input type="number" required min="15" max="60" placeholder="18" class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentRed">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-gray-300 mb-1">سبب التقديم ومفهومك عن الحياة الواقعية</label>
-                    <textarea rows="3" required placeholder="اكتب باختصار خبرتك في الرول بلاي..." class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentGlow resize-none"></textarea>
+                    <textarea rows="3" required placeholder="اكتب باختصار خبرتك في الرول بلاي..." class="w-full px-4 py-3 rounded-xl bg-bgDark/80 border border-borderDark text-white text-sm focus:outline-none focus:border-accentRed resize-none"></textarea>
                 </div>
 
                 <div class="pt-2">
-                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentGreen to-emerald-600 hover:from-emerald-500 hover:to-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-950/50 transition-all flex items-center justify-center gap-2">
-                        <span>إرسال الطلب لإدارة مصر</span>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentRed to-rose-700 hover:from-rose-600 hover:to-rose-800 text-white font-bold text-sm shadow-lg shadow-red-950/50 transition-all flex items-center justify-center gap-2">
+                        <span>إرسال الطلب لإدارة سيرفر مصر</span>
                         <i class="fa-brands fa-discord text-lg"></i>
                     </button>
                 </div>
@@ -743,19 +669,21 @@
     <footer class="border-t border-borderDark/60 py-10 bg-bgDark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-goldAccent flex items-center justify-center font-bold text-sm text-black">M</div>
-                <span class="text-sm font-bold text-gray-300">سيرفر مصر للحياة الواقعية 1.20.1 © 2026</span>
+                <div class="w-8 h-8 rounded-full bg-accentRed flex items-center justify-center font-bold text-sm text-white overflow-hidden">
+                    <img src="logo.png" alt="logo" class="w-full h-full object-contain">
+                </div>
+                <span class="text-sm font-bold text-gray-300">سيرفر مصر للحياة الواقعية 1.7.10 © 2026</span>
             </div>
             
             <div class="flex items-center gap-6 text-gray-400 text-lg">
-                <a href="#" class="hover:text-goldGlow transition-colors"><i class="fa-brands fa-discord"></i></a>
-                <a href="#" class="hover:text-goldGlow transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="hover:text-goldGlow transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://discord.gg/yourserver" target="_blank" class="hover:text-accentRed transition-colors"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="hover:text-accentRed transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-accentRed transition-colors"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+    <!-- Scripts -->
     <script>
         function switchView(viewName) {
             const mainView = document.getElementById('mainView');
@@ -809,7 +737,6 @@
         }
 
         function closeApplyModal() {
-            document.getElementById('applyModal').classList.hidden = true;
             document.getElementById('applyModal').classList.add('hidden');
         }
 
@@ -819,7 +746,7 @@
             
             const toast = document.getElementById('toast');
             const toastMsg = document.getElementById('toastMsg');
-            toastMsg.innerText = 'تم إرسال طلبك بنجاح لسيرفر مصر!';
+            toastMsg.innerText = 'تم إرسال طلبك بنجاح لإدارة سيرفر مصر!';
             
             toast.classList.remove('translate-y-24', 'opacity-0');
             setTimeout(() => {
