@@ -30,8 +30,8 @@ police:{about:"الشرطة هي الجهة المسؤولة عن حفظ الأ�
  {n:"أمن الطرق",ic:"road",c:"#8b5cf6",d:"تأمين الطرق السريعة.",q:["لماذا تريد أمن الطرق؟","هل تملك مركبة مخصصة؟"]}]}};
 /* ============================================================ */
 /* ===== Supabase (ضع بياناتك من Project Settings → API) ===== */
-CONFIG.sbUrl="https://YOUR-PROJECT.supabase.co";
-CONFIG.sbKey="YOUR-ANON-KEY";
+CONFIG.sbUrl="https://wgfrmmqcwjymposnugtm.supabase.co";
+CONFIG.sbKey="sb_publishable_ojf7HS9AF1fwfMqvT8Diiw_lsO2zFaV";
 const _demo=CONFIG.sbKey.startsWith("YOUR");
 CONFIG.api=_demo?"":CONFIG.sbUrl+"/functions/v1/send-form";
 CONFIG.h=_demo?{}:{apikey:CONFIG.sbKey,Authorization:"Bearer "+CONFIG.sbKey};
