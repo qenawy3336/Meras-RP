@@ -1,7 +1,7 @@
 /* ========= الإعدادات: انقلها لملف config.js لو حبيت ========= */
 const CONFIG={
 name:"مصر للحياة الواقعية",
-logo:"", // مثال: "logo.png"
+logo:"logo.png", // مثال: "logo.png"
 discord:"https://discord.gg/",
 api:"", // رابط Edge Function لإرسال الفورمات لديسكورد
 news:[
