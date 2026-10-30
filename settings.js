@@ -3,7 +3,7 @@ CONFIG.logo="logo.png";            // مثال: "logo.png"
 CONFIG.discord="https://discord.gg/";
 CONFIG.sbUrl="https://wgfrmmqcwjymposnugtm.supabase.co";
 CONFIG.sbKey="sb_publishable_ojf7HS9AF1fwfMqvT8Diiw_lsO2zFaV";
-const _demo=CONFIG.sbKey.startsWith("YOUR");
+const _demo=CONFIG.sbKey.startsWith("sb_publishable_ojf7HS9AF1fwfMqvT8Diiw_lsO2zFaV");
 CONFIG.api=_demo?"":CONFIG.sbUrl+"/functions/v1/send-form";
 CONFIG.h=_demo?{}:{apikey:CONFIG.sbKey,Authorization:"Bearer "+CONFIG.sbKey};
 /* الأخبار والقوانين (عدّلهم براحتك) */
