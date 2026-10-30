@@ -1,6 +1,6 @@
 /* إعداداتك الخاصة — لا تتغير مع التحديثات */
 CONFIG.logo="logo.png";            // مثال: "logo.png"
-CONFIG.discord="https://discord.gg/Jc3Fsa3ZSq";
+CONFIG.discord="https://discord.gg/eDXexQMCYD";
 CONFIG.sbUrl="https://zdtilvwdtkokdwxhqqfw.supabase.co";
 CONFIG.sbKey="sb_publishable_WiH57FQZz2TJ6xO8aCEFgQ_SJDY-wak";
 const _demo=CONFIG.sbKey.startsWith("YOUR");
