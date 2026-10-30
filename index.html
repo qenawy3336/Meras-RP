@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title> Misr RP  </title>
+<title> Meras RP  </title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap">
 <style>
-:root{--p:#e11d2e;--bg:#f7f7f8;--card:#fff;--tx:#0f1115;--mut:#5f6670;--bd:#e3e5e9;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--p:#1de11d;--bg:#f7f7f8;--card:#fff;--tx:#0f1115;--mut:#5f6670;--bd:#e3e5e9;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a0b0e;--card:#12141a;--tx:#eef0f4;--mut:#8b93a1;--bd:#22262f;color-scheme:dark}}
 :root[data-theme=dark]{--bg:#0a0b0e;--card:#12141a;--tx:#eef0f4;--mut:#8b93a1;--bd:#22262f;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-padding-top:76px}
@@ -22,7 +22,7 @@ main{max-width:1080px;margin:auto;padding:0 20px 60px}
 .hero{position:relative;isolation:isolate;text-align:center;padding:96px 10px 72px}
 .hero::before{content:"";position:absolute;inset:0 -100vw;z-index:-1;background:radial-gradient(55% 60% at 50% 0,color-mix(in srgb,var(--p) 20%,transparent),transparent),linear-gradient(var(--bd) 1px,transparent 1px) 0 0/52px 52px,linear-gradient(90deg,var(--bd) 1px,transparent 1px) 0 0/52px 52px;-webkit-mask-image:linear-gradient(#000 30%,transparent);mask-image:linear-gradient(#000 30%,transparent)}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:4px 16px;font-size:13px;color:var(--mut);margin-bottom:22px}.pill i{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e}
-.hero h1{font-size:clamp(32px,6vw,58px);margin:0;font-weight:900;letter-spacing:-.5px;line-height:1.25}.hero h1 span{background:linear-gradient(90deg,var(--p),#ff6b6b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1{font-size:clamp(32px,6vw,58px);margin:0;font-weight:900;letter-spacing:-.5px;line-height:1.25}.hero h1 span{background:linear-gradient(90deg,var(--p),#84ff6b);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--mut);max-width:540px;margin:16px auto 30px;font-size:17px}.hero .btn{margin:4px;padding:12px 26px}
 h2{font-size:24px;font-weight:800;margin:70px 0 20px;display:flex;align-items:center;gap:10px}h2::before{content:"";width:4px;height:22px;background:var(--p);border-radius:2px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
@@ -62,7 +62,7 @@ table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}td,th{p
 <nav><a href="#" onclick="go('')">الرئيسية</a><a href="#" onclick="go('rules')">القوانين</a><a href="#" onclick="go('sectors')">القطاعات</a><a href="#" onclick="go('news')">الأخبار</a><a class="dl" target="_blank" rel="noopener">ديسكورد</a></nav>
 <button class="btn o" id="th" title="تبديل الثيم"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></svg></button></header>
 <main id="app"></main>
-<footer>© مصر للحياة الواقعية — جميع الحقوق محفوظة · <a class="dl" target="_blank" rel="noopener" style="color:var(--p);text-decoration:none">انضم لسيرفر ديسكورد</a></footer>
+<footer>© ميراس للحياة الواقعية — جميع الحقوق محفوظة · <a class="dl" target="_blank" rel="noopener" style="color:var(--p);text-decoration:none">انضم لسيرفر ديسكورد</a></footer>
 <div id="m"></div><div id="t"></div>
 <script src="config.js"></script>
 <script src="settings.js"></script>
@@ -98,7 +98,7 @@ I=k=>`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="curren
 function go(h){location.hash=h}
 function home(){
  document.body.className="";
- $("#app").innerHTML=`<section class="hero"><span class="pill"><i></i>سيرفر ماينكرافت للحياة الواقعية</span><h1>أهلاً بك في <span>${CONFIG.name}</span></h1><p>مجتمع ماينكرافت للحياة الواقعية بالطابع المصري. اختر دورك وابدأ قصتك داخل المدينة.</p>
+ $("#app").innerHTML=`<section class="hero"><span class="pill"><i></i>سيرفر ماينكرافت للحياة الواقعية</span><h1>أهلاً بك في <span>${CONFIG.name}</span></h1><p>مجتمع ماينكرافت للحياة الواقعية بالطابع ميراس. اختر دورك وابدأ قصتك داخل المدينة.</p>
  <a class="btn dc" href="${CONFIG.discord}" target="_blank" rel="noopener">دخول بديسكورد</a><button class="btn" onclick="citizen()">تقديم مواطنة / سياحة / زيارة</button><a class="btn o" href="${CONFIG.discord}" target="_blank" rel="noopener">انضم لسيرفر ديسكورد</a></section>
  <h2 id="sectors">القطاعات</h2><div class="grid">${CONFIG.sectors.map((s,i)=>`<div class="card sec" style="--c:${s.c}">${s.img?`<img class="pi" src="${s.img}" alt="">`:""}<div class="ic">${I(s.ic)}</div><h3>${s.n}</h3><p>${s.d}</p><button class="btn" onclick="sectorForm(CONFIG.sectors[${i}])">قدّم الآن</button> ${s.more?`<button class="btn o" style="border-color:${s.c};color:${s.c};background:none" onclick="go('${s.more}')">المزيد</button>`:""}</div>`).join("")}</div>
  <h2 id="rules">القوانين</h2>${CONFIG.rules.map(r=>`<details><summary>${r.t}</summary><ol>${r.l.map(x=>`<li>${x}</li>`).join("")}</ol></details>`).join("")}
