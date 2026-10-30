@@ -2,7 +2,7 @@
 CONFIG.logo="logo.png";            // مثال: "logo.png"
 CONFIG.discord="https://discord.gg/F79qbw8PSc";
 CONFIG.sbUrl="https://zdtilvwdtkokdwxhqqfw.supabase.co";
-CONFIG.sbKey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkdGlsdndkdGtva2R3eGhxcWZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMzNzg1OTcsImV4cCI6MjEwODk1NDU5N30.HyoYu7D7ug7BvvspbdIe8STdJYWDjjhlPRCtJQwaKfQ";
+CONFIG.sbKey="sb_publishable_WiH57FQZz2TJ6xO8aCEFgQ_SJDY-wak";
 const _demo=CONFIG.sbKey.startsWith("YOUR");
 CONFIG.api=_demo?"":CONFIG.sbUrl+"/functions/v1/send-form";
 CONFIG.h=_demo?{}:{apikey:CONFIG.sbKey,Authorization:"Bearer "+CONFIG.sbKey};
