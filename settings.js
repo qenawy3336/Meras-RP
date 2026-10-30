@@ -1,8 +1,8 @@
 /* إعداداتك الخاصة — لا تتغير مع التحديثات */
-CONFIG.logo="";            // مثال: "logo.png"
+CONFIG.logo="logo.png";            // مثال: "logo.png"
 CONFIG.discord="https://discord.gg/";
-CONFIG.sbUrl="https://YOUR-PROJECT.supabase.co";
-CONFIG.sbKey="YOUR-ANON-KEY";
+CONFIG.sbUrl="https://wgfrmmqcwjymposnugtm.supabase.co";
+CONFIG.sbKey="sb_publishable_ojf7HS9AF1fwfMqvT8Diiw_lsO2zFaV";
 const _demo=CONFIG.sbKey.startsWith("YOUR");
 CONFIG.api=_demo?"":CONFIG.sbUrl+"/functions/v1/send-form";
 CONFIG.h=_demo?{}:{apikey:CONFIG.sbKey,Authorization:"Bearer "+CONFIG.sbKey};
